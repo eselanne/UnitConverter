@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
@@ -60,7 +59,9 @@
                         <TextField fx:id="txtImperialLength" layoutX="201.0" layoutY="161.0" prefHeight="25.0" prefWidth="100.0" />
                         <Label fx:id="lab1" layoutX="41.0" layoutY="131.0" prefHeight="17.0" prefWidth="100.0" />
                         <Label fx:id="lab2" layoutX="201.0" layoutY="131.0" prefHeight="17.0" prefWidth="100.0" />
-                        <Button fx:id="lengthConv" layoutX="365.0" layoutY="117.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="79.0" text="Convert!" />
+                        <Button fx:id="lengthConv" layoutX="364.0" layoutY="97.0" mnemonicParsing="false" onAction="#ConvertLength" prefHeight="45.0" prefWidth="79.0" text="Convert!" />
+                        <Button layoutX="382.0" layoutY="161.0" mnemonicParsing="false" onAction="#ClearLengthFields" text="Clear" />
+                        <Label fx:id="errorlabel" layoutX="41.0" layoutY="217.0" prefHeight="17.0" prefWidth="135.0" />
                      </children>
                   </AnchorPane>
             </content>
