@@ -43,22 +43,24 @@
                      <children>
                         <MenuButton layoutX="41.0" layoutY="97.0" mnemonicParsing="false" text="Metric">
                           <items>
-                            <MenuItem fx:id="kilometer" mnemonicParsing="false" onAction="#ChangeLabelToKm" text="Kilometer" />
-                            <MenuItem fx:id="meter" mnemonicParsing="false" onAction="#ChangeLabelToM" text="Meter" />
-                              <MenuItem fx:id="centimeter" mnemonicParsing="false" onAction="#ChangeLabelToCm" text="Centimeter" />
+                            <MenuItem fx:id="kilometer" mnemonicParsing="false" onAction="#ChangeMetricLengthLabel" text="Kilometer" />
+                            <MenuItem fx:id="meter" mnemonicParsing="false" onAction="#ChangeMetricLengthLabel" text="Meter" />
+                              <MenuItem fx:id="centimeter" mnemonicParsing="false" onAction="#ChangeMetricLengthLabel" text="Centimeter" />
+                              <MenuItem fx:id="millimeter" mnemonicParsing="false" onAction="#ChangeMetricLengthLabel" text="Millimeter" />
                           </items>
                         </MenuButton>
                         <MenuButton layoutX="201.0" layoutY="97.0" mnemonicParsing="false" text="Imperial">
                           <items>
-                            <MenuItem fx:id="mile" mnemonicParsing="false" onAction="#ChangeLabelToMile" text="Mile" />
-                            <MenuItem fx:id="yard" mnemonicParsing="false" onAction="#ChangeLabelToYard" text="Yard" />
-                              <MenuItem fx:id="foot" mnemonicParsing="false" onAction="#ChangeLabelToFoot" text="Foot" />
+                            <MenuItem fx:id="mile" mnemonicParsing="false" onAction="#ChangeImperialLengthLabel" text="Mile" />
+                            <MenuItem fx:id="yard" mnemonicParsing="false" onAction="#ChangeImperialLengthLabel" text="Yard" />
+                              <MenuItem fx:id="foot" mnemonicParsing="false" onAction="#ChangeImperialLengthLabel" text="Foot" />
+                              <MenuItem fx:id="inch" mnemonicParsing="false" onAction="#ChangeImperialLengthLabel" text="Inch" />
                           </items>
                         </MenuButton>
                         <TextField fx:id="txtMetricLength" layoutX="41.0" layoutY="161.0" prefHeight="25.0" prefWidth="100.0" />
                         <TextField fx:id="txtImperialLength" layoutX="201.0" layoutY="161.0" prefHeight="25.0" prefWidth="100.0" />
-                        <Label fx:id="lab1" layoutX="41.0" layoutY="131.0" prefHeight="17.0" prefWidth="100.0" />
-                        <Label fx:id="lab2" layoutX="201.0" layoutY="131.0" prefHeight="17.0" prefWidth="100.0" />
+                        <Label fx:id="lab1" layoutX="41.0" layoutY="131.0" prefHeight="17.0" prefWidth="100.0" text="Kilometer" />
+                        <Label fx:id="lab2" layoutX="201.0" layoutY="131.0" prefHeight="17.0" prefWidth="100.0" text="Mile" />
                         <Button fx:id="lengthConv" layoutX="364.0" layoutY="97.0" mnemonicParsing="false" onAction="#ConvertLength" prefHeight="45.0" prefWidth="85.0" text="Convert!" />
                         <Button layoutX="364.0" layoutY="161.0" mnemonicParsing="false" onAction="#ClearLengthFields" prefHeight="25.0" prefWidth="85.0" text="Clear All" />
                         <Label fx:id="errorlabel" layoutX="41.0" layoutY="257.0" prefHeight="17.0" prefWidth="214.0" />

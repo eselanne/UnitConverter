@@ -16,6 +16,9 @@ public class ConvertMethods {
 		double a = 3;
 		// muunnos metreiksi
 		switch (s) {
+		case "Millimeter":
+			a = d/1000;
+			break;
 		case "Centimeter":
 			a = d / 100;
 			break;
@@ -38,6 +41,9 @@ public class ConvertMethods {
 		double a = 0;
 		// muunnos jaloksi
 		switch (test) {
+		case "Inch":
+			a = d * 0.0833333333;
+			break;
 		case "Foot":
 			a = d;
 			break;
@@ -58,6 +64,9 @@ public class ConvertMethods {
 	public static double ConvertBasicToImperial(String s, double d) {
 		double a = 3;
 		switch (s) {
+		case "Inch":
+			a = d * 12;
+			break;
 		case "Foot":
 			a = d;
 			break;
@@ -72,11 +81,14 @@ public class ConvertMethods {
 
 	}
 
-	// muuttaa sentit haluttuun metriseen yksikköön
+	// muuttaa metrit haluttuun metriseen yksikköön
 	public static double ConvertBasicToMetric(String s, double d) {
 		double a = 0;
 		String test = s;
 		switch (test) {
+		case "Millimeter":
+			a = d * 1000;
+			break;
 		case "Centimeter":
 			a = d * 100;
 			break;

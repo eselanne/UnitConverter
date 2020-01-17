@@ -24,11 +24,15 @@ public class MainController implements Initializable {
 	@FXML
 	private MenuItem centimeter;
 	@FXML
+	private MenuItem millimeter;
+	@FXML
 	private MenuItem mile;
 	@FXML
 	private MenuItem yard;
 	@FXML
 	private MenuItem foot;
+	@FXML
+	private MenuItem inch;
 	@FXML
 	private TextField txtMetricLength;
 	@FXML
@@ -50,45 +54,49 @@ public class MainController implements Initializable {
 	
 	// ******************LENGHT LABEL CHANGES********************
 	
+	
 	@FXML
-	public void ChangeLabelToKm (ActionEvent event) {
-		
-		lab1.setText(kilometer.getText());
-		
-	}
-	@FXML
-	public void ChangeLabelToM (ActionEvent event) {
-		
-		lab1.setText(meter.getText());
-		
-	}
-	@FXML
-	public void ChangeLabelToCm(ActionEvent event) {
-		
-		lab1.setText(centimeter.getText());
-		
+	public void ChangeMetricLengthLabel(ActionEvent event) {
+		MenuItem temp = (MenuItem) event.getSource();
+		String label = temp.getText();
+		switch (label) {
+		case "Kilometer":
+			lab1.setText(label);
+			break;
+		case "Meter":
+			lab1.setText(label);
+			break;
+		case "Centimeter":
+			lab1.setText(label);
+			break;
+		case "Millimeter":
+			lab1.setText(label);
+			break;
+		}
 	}
 	
 	@FXML
-	public void ChangeLabelToMile(ActionEvent event) {
-		
-		lab2.setText(mile.getText());
-		
+	public void ChangeImperialLengthLabel(ActionEvent event) {
+		MenuItem temp = (MenuItem) event.getSource();
+		String label = temp.getText();
+		switch (label) {
+		case "Mile":
+			lab2.setText(label);
+			break;
+		case "Yard":
+			lab2.setText(label);
+			break;
+		case "Foot":
+			lab2.setText(label);
+			break;
+		case "Inch":
+			lab2.setText(label);
+			break;
+		}
 	}
 	
-	@FXML
-	public void ChangeLabelToYard(ActionEvent event) {
-		
-		lab2.setText(yard.getText());
-		
-	}
 	
-	@FXML
-	public void ChangeLabelToFoot(ActionEvent event) {
-		
-		lab2.setText(foot.getText());
-		
-	}
+	
 	
 	
 	//**********************************************************
