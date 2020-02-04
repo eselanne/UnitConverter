@@ -52,8 +52,11 @@ public class MainController implements Initializable {
 	}
 	
 	
-	// ******************LENGHT LABEL CHANGES********************
 	
+	
+	
+	// ******************LENGHT LABEL CHANGES********************
+	// Muuttaa labelin nimen, kun valikosta valitaan haluttu yksikkö
 	
 	@FXML
 	public void ChangeMetricLengthLabel(ActionEvent event) {
@@ -75,6 +78,8 @@ public class MainController implements Initializable {
 		}
 	}
 	
+	
+	// Muuttaa labelin nimen, kun valikosta valitaan haluttu yksikkö
 	@FXML
 	public void ChangeImperialLengthLabel(ActionEvent event) {
 		MenuItem temp = (MenuItem) event.getSource();
@@ -99,8 +104,9 @@ public class MainController implements Initializable {
 	
 	
 	
-	//**********************************************************
 	
+	//**********************************************************
+	// Muuttaa annetun arvon haluttuun yksikköön
 	@FXML
 	public void ConvertLength (ActionEvent event) {
 		
@@ -125,11 +131,15 @@ public class MainController implements Initializable {
 		
 		if (txtMetricLength.getLength() == 0) {
 			double d = Double.parseDouble(txtImperialLength.getText());
-			txtMetricLength.setText(String.valueOf(ConvertMethods.ImperialToMetric(labelImperial, labelMetric, d)));
+			double ans = ConvertMethods.ImperialToMetric(labelImperial, labelMetric, d);
+			double roundOff = Math.round(ans * 100.0) / 100.0;
+			txtMetricLength.setText(String.valueOf(roundOff));
 		}
 		if (txtImperialLength.getLength() == 0) {
 			double d = Double.parseDouble(txtMetricLength.getText());
-			txtImperialLength.setText(String.valueOf(ConvertMethods.MetricToImperial(labelMetric, labelImperial, d)));
+			double ans = ConvertMethods.MetricToImperial(labelMetric, labelImperial, d);
+			double roundOff = Math.round(ans * 100.0) / 100.0;
+			txtImperialLength.setText(String.valueOf(roundOff));
 		}
 		
 	}
