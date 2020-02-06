@@ -1,5 +1,7 @@
 
 public class ConvertMethods {
+	
+	///////////**************LENGTH****************/////////////
 
 	public static double MetricToImperial(String m, String i, double d) {
 		double a = ConvertBasicToImperial(i, ConvertMetricToBasic(m, d));
@@ -101,6 +103,45 @@ public class ConvertMethods {
 		}
 		return a;
 
+	}
+	///////************LENGTH ENDS***************////////////
+	
+	//////***********TEMPERATURE***************//////////
+	
+	
+	public static double ConvertCelciusKelvinToFahrenheit(String s, String ss, double d) {
+		if (s.equals("Kelvin") && ss.equals("Fahrenheit")) {
+			d = d - 273.15;
+			d = d * 1.8 + 32;
+			return d;
+		}
+		if (s.equals("Celsius") && ss.equals("Fahrenheit")) {
+			d = d * 1.8 + 32;
+			return d;
+		}
+		if (s.equals("Celsius") && ss.equals("Kelvin")) {
+			d = d + 273.15;
+			return d;
+		}
+		//jos mikään if ei toteudu, on kyseessö Kelvin-Kelvin muutos
+		return d;
+	}
+
+	public static double ConvertFahrenheitToCelsius(String s, String ss, double d) {
+		if (ss.equals("Fahrenheit") && s.equals("Celsius")) {
+			d = (d - 32) * (5.0/9.0);
+			return d;
+		}
+		if (ss.equals("Fahrenheit") && s.equals("Kelvin")) {
+			d = (d - 32) * (5.0/9.0);
+			d = d + 273.15;
+			return d;
+		}
+		if (ss.equals("Kelvin") && s.equals("Celsius")) {
+			d = d - 273.15;
+		}
+		//jos mikään if ei toteudu, on kyseessö Kelvin-Kelvin muutos
+		return d;
 	}
 
 }
